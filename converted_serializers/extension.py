@@ -66,7 +66,7 @@ class ConvertPreLCMtoLCM(extensions.BasePipeline):
             serializer = get_serializer_for_cluster(node.cluster)()
             serializer.initialize(node.cluster)
             role = objects.Node.all_roles(node)[0]
-            real_data = serializer.serialize_node({}, node, role)
+            real_data = serializer.serialize_node(node, role)
             return real_data
 
     @classmethod
